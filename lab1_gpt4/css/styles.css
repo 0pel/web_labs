@@ -1,4 +1,3 @@
-/* Подключение шрифтов */
 @font-face {
     font-family: "ManropeBold";
     src: url(../fonts/Manrope-Bold.ttf);
@@ -25,7 +24,6 @@
     src: url("../fonts/Manrope-ExtraLight.ttf");
 }
 
-/* Сброс базовых стилей */
 
 * {
     padding: 0;
@@ -35,7 +33,6 @@
     outline: none;
 }
 
-/* Общие стили для всего приложения */
 
 body {
     background: #040C18;
@@ -139,8 +136,6 @@ p {
     padding: 1rem 0;
 }
 
-/* Стили для Шапки */
-
 .header {
     display: flex;
     max-width: 1169px;
@@ -183,7 +178,6 @@ p {
     column-gap: 1rem;
 }
 
-/* Стили для первого экрана (Хиро секция) */
 
 .hero_section {
     display: flex;
@@ -244,8 +238,6 @@ p {
     width: 100%;
 }
 
-/* Секция брендов */
-
 .brands_section {
     display: flex;
     justify-content: center;
@@ -253,8 +245,6 @@ p {
     padding: 0 0 6rem 0;
     column-gap: 3rem;
 }
-
-/* Что такое Chat GPT */
 
 .what_is_chatgpt_section {
     display: flex;
@@ -325,8 +315,6 @@ p {
     font-size: 14px;
     line-height: 1.8;
 }
-
-/* Будущее наступило */
 
 .future_here {
     display: flex;
@@ -527,44 +515,181 @@ p {
 .footer {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    width: 100%;
     background: #031B34;
-    width: 80%;
+    padding: 4rem 2rem 1rem;
+    margin-top: 4rem;
 }
 
-.footer h1 {
+.footer__top {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     text-align: center;
-    margin-top: 196px;
+    margin-bottom: 8rem;
 }
 
-.footer button {
+.footer__title {
+    font-size: 62px;
+    line-height: 1.2;
+    margin-bottom: 4rem;
+    background: linear-gradient(90deg, #ae67fa 1.84%, #f49867 102.67%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-family: "ManropeBold", sans-serif;
+}
+
+.footer__cta-button {
+    padding: 1.5rem 3rem;
+    border: 1px solid #fff;
+    color: #fff;
+    text-decoration: none;
     font-size: 18px;
-    background-color: transparent;
-    border: 1px solid white;
-    color: white;
-    padding: 20px 0;
-    width: 300px;
+    transition: all 0.3s ease;
+    font-family: "Manrope", sans-serif;
 }
 
-.footer button:hover {
+.footer__cta-button:hover {
     background: #ae67fa;
     border-color: #ae67fa;
 }
 
-.footer a {
-    margin: 64px 0 180px 0
+.footer__main {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 4rem;
+    margin-bottom: 4rem;
+    margin-left: 10%;
+    margin-right: 10%;
 }
 
-
-
-footer {
-    color: white;
+.footer__info {
+    flex: 1;
+    min-width: 250px;
 }
 
-/* Медиа запросы для адаптива */
+.footer__logo {
+    width: 120px;
+    margin-bottom: 1.5rem;
+    height: auto;
+}
+
+.footer__address {
+    color: #fff;
+    line-height: 1.6;
+    font-size: 14px;
+    font-family: "Manrope", sans-serif;
+}
+
+.footer__links-container {
+    display: flex;
+    flex: 2;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 2rem;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+.footer__column {
+    min-width: 150px;
+    margin: 0 2rem;
+}
+
+.footer__column-title {
+    color: #fff;
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 1.5rem;
+    font-family: "ManropeBold", sans-serif;
+}
+
+.footer__list {
+    list-style: none;
+}
+
+.footer__list li {
+    margin-bottom: 1rem;
+}
+
+.footer__link {
+    color: #757575;
+    text-decoration: none;
+    font-size: 14px;
+    transition: color 0.3s ease;
+    font-family: "Manrope", sans-serif;
+}
+
+.footer__link:hover {
+    color: #f49867;
+}
+
+.footer__contact {
+    color: #757575;
+    font-size: 14px;
+    line-height: 1.6;
+    font-family: "Manrope", sans-serif;
+}
+
+.footer__bottom {
+    text-align: center;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    margin: 0 15%; /* Центрируем нижнюю часть */
+}
+
+.footer__copyright {
+    color: #fff;
+    font-size: 14px;
+    opacity: 0.8;
+    font-family: "Manrope", sans-serif;
+}
 
 @media screen and (max-width: 1024px) {
-    .header {
+    .footer__main {
+        margin-left: 5%;
+        margin-right: 5%;
+    }
+
+    .footer__links-container {
+        margin-left: 2%;
+        margin-right: 2%;
+    }
+
+    .footer__column {
+        margin: 0 1rem;
+    }
+
+    .footer__bottom {
+        margin: 0 5%;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .footer__title {
+        font-size: 36px;
+    }
+
+    .footer__main {
         flex-direction: column;
+        margin-left: 2%;
+        margin-right: 2%;
+    }
+
+    .footer__links-container {
+        flex-direction: column;
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    .footer__column {
+        margin: 0 0 2rem 0;
+        width: 100%;
+    }
+
+    .footer__bottom {
+        margin: 0 2%;
     }
 }
