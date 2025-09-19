@@ -1,13 +1,11 @@
-import brandsData from "../mockData/brandsData.ts";
+import brandsData, {type Brand} from "../mockData/brandsData.ts"
 
-export const BrandsImage = ({ brand: { alt, src } }) => (
-  <img className="brands_section__img" src={src} alt={alt} />
-);
+function BrandsImage({brand}: { brand: Brand }) {
+    return <img className="brands_section__img" src={brand.src} alt={brand.alt}/>
+}
 
-export const Brands = () => {
-  return brandsData.map((brand, index) => (
-    <BrandsImage key={index} brand={brand} />
-  ));
-};
-
-export default Brands;
+export default function Brands() {
+    return brandsData.map((brand, index) => (
+        <BrandsImage key={index} brand={brand}/>
+    ))
+}

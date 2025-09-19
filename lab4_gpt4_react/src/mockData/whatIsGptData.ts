@@ -1,39 +1,58 @@
-const whatIsGptTopData = {
-  header: "Что такое GPT-4",
-  content:
-    "Мы так мнение друзей мне сообщаем как восторг. Вся передняя часть тарелки слышна ох как надо. Его неполноценное и неубедительное место жительства принадлежит ему. Соединение сделало невозможным собственное шумное жилье. На свадьбе светлость Ан настоял на такой человечности. Дружелюбный холостяцкий вход.",
-};
+export type BlogPost = {
+    header: string,
+    content: string
+}
 
-const whatIsGptMiddleData = {
-  header: "Что такое GPT-4",
-  button: {
-    href: "#",
-    title: "Исследовать библиотеку",
-  },
-};
+export type BlogWithButton = {
+    header: string
+    button: {
+        href: string,
+        title: string,
+    },
+}
 
-const whatIsGptBottomData = [
-  {
-    header: "Чатботы",
+export type BlogPostData = {
+    whatIsGptTopData: BlogPost,
+    whatIsGptMiddleData: BlogWithButton,
+    whatIsGptBottomData: BlogPost[],
+}
+
+const whatIsGptTopData: BlogPost = {
+    header: "Что такое GPT-4",
     content:
-      "Мы так мнение друзей мне сообщаем как восторг. Вся передняя часть тарелки слышна ох как надо.",
-  },
-  {
-    header: "База Знаний",
-    content:
-      " На свадьбе светлость Ан настоял на такой человечности. Дружелюбный холостяцкий вход. Как поставить невозможное.",
-  },
-  {
-    header: "Образование",
-    content:
-      "На свадьбе светлость Ан настоял на такой человечности. Дружелюбный холостяцкий вход. Как поставить невозможное.",
-  },
-];
+        "Мы так мнение друзей мне сообщаем как восторг. Вся передняя часть тарелки слышна ох как надо. Его неполноценное и неубедительное место жительства принадлежит ему. Соединение сделало невозможным собственное шумное жилье. На свадьбе светлость Ан настоял на такой человечности. Дружелюбный холостяцкий вход.",
+}
 
-const whatIsGptData = {
-  whatIsGptTopData,
-  whatIsGptMiddleData,
-  whatIsGptBottomData,
-};
+const whatIsGptMiddleData: BlogWithButton = {
+    header: "Что такое GPT-4",
+    button: {
+        href: "#",
+        title: "Исследовать библиотеку",
+    },
+}
 
-export default whatIsGptData;
+const whatIsGptBottomData: BlogPost[] = [
+    {
+        header: "Чатботы",
+        content:
+            "Мы так мнение друзей мне сообщаем как восторг. Вся передняя часть тарелки слышна ох как надо.",
+    },
+    {
+        header: "База Знаний",
+        content:
+            " На свадьбе светлость Ан настоял на такой человечности. Дружелюбный холостяцкий вход. Как поставить невозможное.",
+    },
+    {
+        header: "Образование",
+        content:
+            "На свадьбе светлость Ан настоял на такой человечности. Дружелюбный холостяцкий вход. Как поставить невозможное.",
+    },
+]
+
+const whatIsGptData: BlogPostData = {
+    whatIsGptTopData,
+    whatIsGptMiddleData,
+    whatIsGptBottomData,
+}
+
+export default whatIsGptData
