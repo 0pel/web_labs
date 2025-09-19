@@ -1,4 +1,4 @@
-import brandsData from "../mockData/brandsData";
+import brandsData from "../mockData/brandsData.ts";
 
 export const BrandsImage = ({ brand: { alt, src } }) => (
   <img className="brands_section__img" src={src} alt={alt} />

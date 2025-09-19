@@ -1,4 +1,4 @@
-import whatIsGptData from "../mockData/whatIsGptData";
+import whatIsGptData from "../mockData/whatIsGptData.ts";
 
 export const WhatIsGptTop = ({ whatIsGptTopData }) => {
   const { header, content } = whatIsGptTopData;

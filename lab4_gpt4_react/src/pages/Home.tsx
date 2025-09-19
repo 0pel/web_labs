@@ -1,8 +1,8 @@
-import Header from "../components/Header";
-import Hero from "../components/Hero";
-import Brands from "../components/Brands";
-import WhatIsChatGpt from "../components/WhatIsChatGpt";
-import FutureHere from "../components/FutureHere";
+import Header from "../components/Header.tsx";
+import Hero from "../components/Hero.tsx";
+import Brands from "../components/Brands.tsx";
+import WhatIsChatGpt from "../components/WhatIsChatGpt.tsx";
+import FutureHere from "../components/FutureHere.tsx";
 
 const Home = () => {
   return (

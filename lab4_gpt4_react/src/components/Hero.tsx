@@ -1,4 +1,4 @@
-import { heroData } from "../mockData/heroData";
+import { heroData } from "../mockData/heroData.ts";
 
 export const Header = ({ header }) => (
   <h1 className="left__header">{header}</h1>

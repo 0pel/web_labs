@@ -1,4 +1,4 @@
-import futureHereData from "../mockData/futureHereData";
+import futureHereData from "../mockData/futureHereData.ts";
 
 export const RightContainer = ({ item }) => {
   const { title, description } = item;

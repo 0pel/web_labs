@@ -1,4 +1,4 @@
-const futurHereData = [
+const futureHereData = [
   {
     title: "Мгновенное улучшение ситуации с недоверием",
     description:
@@ -21,4 +21,4 @@ const futurHereData = [
   },
 ];
 
-export default futurHereData;
+export default futureHereData;

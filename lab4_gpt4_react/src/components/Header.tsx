@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 
-import headerData from "../mockData/headerData";
+import headerData from "../mockData/headerData.ts";
 
 // блокируем и разблокируем скролл во время открытия модального окна
 const body = document.querySelector("body");

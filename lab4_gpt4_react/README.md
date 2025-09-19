@@ -2,10 +2,10 @@
 Необходимо перенести проект из Лабораторной 3 в React.
 
 ### Установка проекта
-npm i
+pnpm i
 
 ### Запуск проекта в режиме разработки
-npm run start
+pnpm run start
 
 ### Сборка проекта
-npm run build
+pnpm run build
