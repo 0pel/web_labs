@@ -1,14 +1,35 @@
 import heroData, {type HeroButton, type HeroIllustration} from "../mockData/heroData.ts"
 
-function Header({header}: { header: string }) {
+type HeaderProps = {
+    header: string
+}
+
+type DescriptionProps = {
+    description: string
+}
+
+type ButtonProps = {
+    ctaButton: HeroButton
+}
+
+type ButtonsProps = {
+    ctaButtons: HeroButton[]
+}
+
+type IllustrationProps = {
+    illustration: HeroIllustration
+}
+
+function Header({header}: Readonly<HeaderProps>) {
     return <h1 className="left__header">{header}</h1>
 }
 
-function Description({description}: { description: string }) {
+function Description({description}: Readonly<DescriptionProps>) {
     return <p className="left__description">{description}</p>
 }
 
-function Button({ctaButton: {type, title}}: { ctaButton: HeroButton }) {
+function Button({ctaButton}: Readonly<ButtonProps>) {
+    const {type, title} = ctaButton
     switch (type) {
         case "input":
             return <input type="text" placeholder={title}/>
@@ -20,17 +41,18 @@ function Button({ctaButton: {type, title}}: { ctaButton: HeroButton }) {
     }
 }
 
-function Buttons({ctaButtons}: { ctaButtons: HeroButton[] }) {
+function Buttons({ctaButtons}: Readonly<ButtonsProps>) {
     return (
         <div className="left__cta_buttons">
-            {ctaButtons.map((ctaButton, index) => (
-                <Button key={index} ctaButton={ctaButton}/>
+            {ctaButtons.map((ctaButton) => (
+                <Button key={ctaButton.id} ctaButton={ctaButton}/>
             ))}
         </div>
     )
 }
 
-function Illustration({illustration: {alt, src}}: { illustration: HeroIllustration }) {
+function Illustration({illustration}: Readonly<IllustrationProps>) {
+    const {alt, src} = illustration
     return <img src={src} alt={alt}/>
 }
 

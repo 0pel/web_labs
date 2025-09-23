@@ -1,6 +1,7 @@
 import IllustrationSvg from "../assets/img/Illustration.svg"
 
 export type HeroButton = {
+    id : number,
     type: "input" | "button",
     title: string
 }
@@ -19,10 +20,12 @@ export type HeroData = {
 
 export const heroCtaButtons: HeroButton[] = [
     {
+        id : 1,
         type: "input",
         title: "Введите Email",
     },
     {
+        id : 2,
         type: "button",
         title: "Начать",
     },

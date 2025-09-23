@@ -1,6 +1,10 @@
 import futureHereData, {type FutureHerePost} from "../mockData/futureHereData.ts"
 
-export function RightContainer({item}: { item: FutureHerePost }) {
+type RightContainerProps = {
+    item: FutureHerePost
+}
+
+function RightContainer({item}: Readonly<RightContainerProps>) {
     const {title, description} = item
 
     return (
@@ -11,7 +15,7 @@ export function RightContainer({item}: { item: FutureHerePost }) {
     )
 }
 
-function FutureHere() {
+export default function FutureHere() {
     return (
         <>
             <div className="future_here__left">
@@ -24,12 +28,10 @@ function FutureHere() {
                 </a>
             </div>
             <div className="future_here__right">
-                {futureHereData.map((item, index) => (
-                    <RightContainer key={index} item={item}/>
+                {futureHereData.map((item) => (
+                    <RightContainer key={item.id} item={item}/>
                 ))}
             </div>
         </>
     )
 }
-
-export default FutureHere

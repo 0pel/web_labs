@@ -7,12 +7,30 @@ import headerData, {
     type HeaderMenuLink,
 } from "../mockData/headerData.ts"
 
+type LogoProps = {
+    logoData: HeaderLogoData
+}
+
+type BurgerProps = {
+    isBurgerActive: boolean,
+    onMenuShow: () => void
+}
+
+type MenuItemProps = {
+    menuItemData: HeaderMenuLink
+}
+
+type ButtonProps = {
+    buttonData: HeaderAuthButton
+}
+
 // блокируем и разблокируем скролл во время открытия модального окна
 const body = document.querySelector("body")!
 const noOverflow = () => body.classList.add("oh")
 const overflow = () => body.classList.remove("oh")
 
-export function Logo({logoData: {alt, href, src}}: { logoData: HeaderLogoData }) {
+export function Logo({logoData}: Readonly<LogoProps>) {
+    const {alt, href, src} = logoData
     return (
         <div className="header__logo">
             <a href={href} className="logo__link">
@@ -22,7 +40,7 @@ export function Logo({logoData: {alt, href, src}}: { logoData: HeaderLogoData })
     )
 }
 
-export function Burger({isBurgerActive, onMenuShow}: { isBurgerActive: boolean, onMenuShow: () => void }) {
+export function Burger({isBurgerActive, onMenuShow}: Readonly<BurgerProps>) {
     return (
         <div
             className={`header__burger_menu ${isBurgerActive ? "" : "hidden"}`}
@@ -35,7 +53,8 @@ export function Burger({isBurgerActive, onMenuShow}: { isBurgerActive: boolean, 
     )
 }
 
-export function MenuItem({menuItemData: {title, href}}: { menuItemData: HeaderMenuLink }) {
+export function MenuItem({menuItemData}: Readonly<MenuItemProps>) {
+    const {title, href} = menuItemData
     return (
         <li className="menu__item">
             <a href={href} className="item__link">
@@ -45,7 +64,7 @@ export function MenuItem({menuItemData: {title, href}}: { menuItemData: HeaderMe
     )
 }
 
-export function Button({buttonData}: { buttonData: HeaderAuthButton }) {
+export function Button({buttonData}: Readonly<ButtonProps>) {
     const {title, href, isPrimary} = buttonData
 
     return (
@@ -72,29 +91,27 @@ export const RightHeader = ({
     const {menuData, buttonsData} = rightHeaderData
 
     return (
-        <>
-            <div className={isMenuShown ? "header__right" : "header__right hidden"}>
-                <aside className="header__menu">
-                    <div
-                        className={`menu__close ${isBurgerActive ? "" : "hidden"}`}
-                        onClick={onMenuClose}
-                    >
-                        <div className="menu__line"></div>
-                        <div className="menu__line"></div>
-                    </div>
-                    <ul className="menu">
-                        {menuData.map((item, index) => (
-                            <MenuItem key={index} menuItemData={item}/>
-                        ))}
-                    </ul>
-                </aside>
-                <div className="cta_buttons">
-                    {buttonsData.map((button, index) => (
-                        <Button key={index} buttonData={button}/>
-                    ))}
+        <div className={isMenuShown ? "header__right" : "header__right hidden"}>
+            <aside className="header__menu">
+                <div
+                    className={`menu__close ${isBurgerActive ? "" : "hidden"}`}
+                    onClick={onMenuClose}
+                >
+                    <div className="menu__line"></div>
+                    <div className="menu__line"></div>
                 </div>
+                <ul className="menu">
+                    {menuData.map((item) => (
+                        <MenuItem key={item.id} menuItemData={item}/>
+                    ))}
+                </ul>
+            </aside>
+            <div className="cta_buttons">
+                {buttonsData.map((button) => (
+                    <Button key={button.id} buttonData={button}/>
+                ))}
             </div>
-        </>
+        </div>
     )
 }
 

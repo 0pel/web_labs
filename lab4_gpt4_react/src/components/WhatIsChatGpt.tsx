@@ -1,6 +1,21 @@
 import whatIsGptData, {type BlogPost, type BlogWithButton} from "../mockData/whatIsGptData.ts"
 
-function WhatIsGptTop({data}: { data: BlogPost }) {
+type WhatIsGptTopProps = {
+    data: BlogPost
+}
+
+type WhatIsGptMiddleProps = {
+    data: BlogWithButton
+}
+type WhatIsGptContainerProps = {
+    item: BlogPost
+}
+
+type WhatIsGptBottomProps = {
+    data: BlogPost[]
+}
+
+function WhatIsGptTop({data}: Readonly<WhatIsGptTopProps>) {
     const {header, content} = data
     return (
         <>
@@ -10,7 +25,7 @@ function WhatIsGptTop({data}: { data: BlogPost }) {
     )
 }
 
-function WhatIsGptMiddle({data}: { data: BlogWithButton }) {
+function WhatIsGptMiddle({data}: Readonly<WhatIsGptMiddleProps>) {
     const {
         header,
         button: {href, title},
@@ -26,7 +41,7 @@ function WhatIsGptMiddle({data}: { data: BlogWithButton }) {
     )
 }
 
-function WhatIsGptContainer({item}: { item: BlogPost }) {
+function WhatIsGptContainer({item}: Readonly<WhatIsGptContainerProps>) {
     const {header, content} = item
 
     return (
@@ -37,10 +52,10 @@ function WhatIsGptContainer({item}: { item: BlogPost }) {
     )
 }
 
-function WhatIsGptBottom({data}: { data: BlogPost[] }) {
+function WhatIsGptBottom({data}: WhatIsGptBottomProps) {
     return (
-        data.map((item, index) => (
-            <WhatIsGptContainer key={index} item={item}/>
+        data.map((item) => (
+            <WhatIsGptContainer key={item.id} item={item}/>
         ))
     )
 }
