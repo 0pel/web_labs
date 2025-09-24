@@ -30,6 +30,7 @@
     font-family: "ManropeExtraLight";
     src: url("../fonts/Manrope-ExtraLight.ttf");
 }
+
 body {
     background: #040C18;
     padding: 0 2rem;
@@ -479,6 +480,10 @@ p {
     .brands_section__img {
         max-width: 180px;
     }
+
+    .footer {
+        max-width: 1800px;
+    }
 }
 
 @media screen and (max-width: 1440px) {
@@ -500,6 +505,10 @@ p {
 
     .hero_section .hero_section__right img {
         max-width: 450px;
+    }
+
+    .footer {
+        max-width: 1440px;
     }
 }
 
@@ -642,8 +651,13 @@ p {
         .cta .cta_left {
             width: 100%;
         }
+
+        .footer {
+            max-width: 1024px;
+        }
     }
 }
+
 @media screen and (max-width: 768px) {
     body {
         padding: 0 1rem;
@@ -757,6 +771,7 @@ p {
         }
     }
 }
+
 @media screen and (max-width: 425px) {
     body {
         padding: 0 0.5rem;
@@ -843,6 +858,7 @@ p {
         padding: 0.5rem 0;
         background-size: contain;
     }
+
     .feature {
         margin: 3rem 0;
     }
@@ -876,6 +892,10 @@ p {
     .cta_button {
         padding: 12px 40px;
         font-size: 14px;
+    }
+
+    .footer {
+        max-width: 425px;
     }
 }
 
@@ -958,14 +978,15 @@ p {
     margin-bottom: 16px;
 }
 
-/* Футер */
 .footer {
     display: flex;
     flex-direction: column;
     width: 100%;
+    max-width: 1800px;
     background: #031B34;
     padding: 4rem 2rem 1rem;
     margin-top: 4rem;
+    align-self: center;
 }
 
 .footer__top {
@@ -1008,8 +1029,6 @@ p {
     flex-wrap: wrap;
     gap: 4rem;
     margin-bottom: 4rem;
-    margin-left: 10%;
-    margin-right: 10%;
 }
 
 .footer__info {
@@ -1036,8 +1055,6 @@ p {
     justify-content: space-between;
     flex-wrap: wrap;
     gap: 2rem;
-    margin-left: 5%;
-    margin-right: 5%;
 }
 
 .footer__column {
@@ -1084,7 +1101,6 @@ p {
     text-align: center;
     padding-top: 2rem;
     border-top: 1px solid rgba(255, 255, 255, 0.1);
-    margin: 0 15%;
 }
 
 .footer__copyright {
@@ -1104,22 +1120,9 @@ p {
         grid-template-columns: 1fr 1fr;
     }
 
-    .footer__main {
-        margin-left: 5%;
-        margin-right: 5%;
-    }
-
-    .footer__links-container {
-        margin-left: 2%;
-        margin-right: 2%;
-    }
-
-    .footer__column {
-        margin: 0 1rem;
-    }
-
-    .footer__bottom {
-        margin: 0 5%;
+    .footer {
+        max-width: 1100px;
+        padding: 4rem 1rem 1rem;
     }
 }
 
@@ -1133,29 +1136,9 @@ p {
         gap: 30px;
     }
 
-    .footer__title {
-        font-size: 36px;
-    }
-
-    .footer__main {
-        flex-direction: column;
-        margin-left: 2%;
-        margin-right: 2%;
-    }
-
-    .footer__links-container {
-        flex-direction: column;
-        margin-left: 0;
-        margin-right: 0;
-    }
-
-    .footer__column {
-        margin: 0 0 2rem 0;
-        width: 100%;
-    }
-
-    .footer__bottom {
-        margin: 0 2%;
+    .footer {
+        max-width: 100%;
+        padding: 3rem 1rem 1rem;
     }
 }
 
@@ -1174,20 +1157,15 @@ p {
         padding: 0 16px 6px;
     }
 
-    .footer__title {
-        font-size: 28px;
-    }
-
-    .footer__cta-button {
-        padding: 1rem 2rem;
-        font-size: 16px;
+    .footer {
+        padding: 2rem 0.5rem 1rem;
     }
 
     .footer__main {
         gap: 2rem;
     }
 }
-/* Секция Feature */
+
 .feature {
     display: flex;
     flex-direction: row;
