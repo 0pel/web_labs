@@ -776,7 +776,7 @@ p {
         background-size: contain;
     }
 }
-
+/* Блог секция */
 .blog {
     display: flex;
     flex-direction: column;
@@ -992,6 +992,7 @@ p {
     font-family: "Manrope", sans-serif;
 }
 
+/* Адаптивность для блога и футера */
 @media screen and (max-width: 1024px) {
     .blog_posts {
         flex-direction: column;
