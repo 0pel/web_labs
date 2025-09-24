@@ -1,647 +1,778 @@
-/* Подключение шрифтов */
 @font-face {
-  font-family: "ManropeBold";
-  src: url(../fonts/Manrope-Bold.ttf);
+    font-family: "ManropeBold";
+    src: url(../fonts/Manrope-Bold.ttf);
 }
 
 @font-face {
-  font-family: "Manrope";
-  src: url(../fonts/Manrope-Regular.ttf);
+    font-family: "Manrope";
+    src: url(../fonts/Manrope-Regular.ttf);
 }
 
 @font-face {
-  font-family: "ManropeLight";
-  src: url(../fonts/Manrope-Light.ttf);
+    font-family: "ManropeLight";
+    src: url(../fonts/Manrope-Light.ttf);
 }
-
-/* Сброс базовых стилей */
 
 * {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
-  font-family: "Manrope", sans-serif;
-  outline: none;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Manrope", sans-serif;
+    outline: none;
 }
 
-/* Общие стили для всего приложения */
-
 body {
-  background: #031b34;
-  padding: 0 2rem;
-  overflow: auto;
+    background: #031b34;
+    padding: 0 2rem;
+    overflow: auto;
 }
 
 body.oh {
-  overflow: hidden;
+    overflow: hidden;
 }
 
 .page {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
 }
 
 a {
-  color: #fff;
-  text-decoration: none;
-  cursor: pointer;
+    color: #fff;
+    text-decoration: none;
+    cursor: pointer;
 }
 
 a,
 button {
-  cursor: pointer;
-  transition: all 0.3s ease-out;
-  -webkit-transition: all 0.3s ease-out;
-  -moz-transition: all 0.3s ease-out;
-  -ms-transition: all 0.3s ease-out;
-  -o-transition: all 0.3s ease-out;
+    cursor: pointer;
+    transition: all 0.3s ease-out;
+    -webkit-transition: all 0.3s ease-out;
+    -moz-transition: all 0.3s ease-out;
+    -ms-transition: all 0.3s ease-out;
+    -o-transition: all 0.3s ease-out;
 }
 
 a:hover,
 button:hover {
-  transition: all 0.3s ease-out;
-  -webkit-transition: all 0.3s ease-out;
-  -moz-transition: all 0.3s ease-out;
-  -ms-transition: all 0.3s ease-out;
-  -o-transition: all 0.3s ease-out;
+    transition: all 0.3s ease-out;
+    -webkit-transition: all 0.3s ease-out;
+    -moz-transition: all 0.3s ease-out;
+    -ms-transition: all 0.3s ease-out;
+    -o-transition: all 0.3s ease-out;
 }
 
 button:hover {
-  background-color: #ae67fa;
+    background-color: #ae67fa;
 }
 
 ul li {
-  list-style-type: none;
+    list-style-type: none;
 }
 
 h1 {
-  font-size: 60px;
-  color: #ae67fa;
+    font-size: 60px;
+    color: #ae67fa;
 }
 
 h2 {
-  font-size: 34px;
+    font-size: 34px;
 }
 
 h1,
 h2 {
-  font-family: "ManropeBold", sans-serif;
-  background: linear-gradient(90deg, #ae67fa 1.84%, #f49867 102.67%);
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+    font-family: "ManropeBold", sans-serif;
+    background: linear-gradient(90deg, #ae67fa 1.84%, #f49867 102.67%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 h3 {
-  font-family: "ManropeBold", sans-serif;
-  color: #fff;
-  font-size: 24px;
+    font-family: "ManropeBold", sans-serif;
+    color: #fff;
+    font-size: 24px;
 }
 
 p {
-  font-size: 16px;
-  color: #fff;
+    font-size: 16px;
+    color: #fff;
 }
 
 .btn {
-  display: flex;
-  padding: 1rem 2rem;
-  background-color: transparent;
-  color: #fff;
-  border: none;
-  font-size: 16px;
-  border-radius: 5px;
-  -webkit-border-radius: 5px;
-  -moz-border-radius: 5px;
-  -ms-border-radius: 5px;
-  -o-border-radius: 5px;
+    display: flex;
+    padding: 1rem 2rem;
+    background-color: transparent;
+    color: #fff;
+    border: none;
+    font-size: 16px;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
 }
 
 .primary-btn {
-  background-color: #ff4820;
+    background-color: #ff4820;
 }
 
 .section {
-  max-width: 1169px;
-  width: 100%;
+    max-width: 1169px;
+    width: 100%;
 }
 
 .lined_header {
-  background: url("../assets/img/gradient_line.svg") no-repeat 0 0 transparent;
-  padding: 1rem 0;
+    background: url("../assets/img/gradient_line.svg") no-repeat 0 0 transparent;
+    padding: 1rem 0;
 }
 
-/* Стили для Шапки */
-
 .header {
-  display: flex;
-  max-width: 1169px;
-  margin: 0 auto;
-  width: 100%;
-  padding: 2rem 0;
-  position: fixed;
-  justify-content: space-between;
-  align-items: center;
-  background: #031b34;
+    display: flex;
+    max-width: 1169px;
+    margin: 0 auto;
+    width: 100%;
+    padding: 2rem 0;
+    position: fixed;
+    justify-content: space-between;
+    align-items: center;
+    background: #031b34;
+    z-index: 10000;
 }
 
 .header .header__logo .logo__link {
-  display: flex;
-  align-items: center;
+    display: flex;
+    align-items: center;
 }
 
 .header .header__menu .menu {
-  display: flex;
-  column-gap: 2rem;
+    display: flex;
+    column-gap: 2rem;
 }
 
 .header .header__right {
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  column-gap: 2rem;
-  opacity: 1;
-  visibility: visible;
-  transition: all 0.3s ease;
-  -webkit-transition: all 0.3s ease;
-  -moz-transition: all 0.3s ease;
-  -ms-transition: all 0.3s ease;
-  -o-transition: all 0.3s ease;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    column-gap: 2rem;
+    opacity: 1;
+    visibility: visible;
+    transition: all 0.3s ease;
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    -ms-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
 }
 
 .header .header__right.hidden {
-  opacity: 0;
-  transition: all 0.3s ease;
-  -webkit-transition: all 0.3s ease;
-  -moz-transition: all 0.3s ease;
-  -ms-transition: all 0.3s ease;
-  -o-transition: all 0.3s ease;
-  visibility: hidden;
+    opacity: 0;
+    transition: all 0.3s ease;
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    -ms-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    visibility: hidden;
 }
 
 .header .header__right .menu__close {
-  width: 38px;
-  height: 38px;
+    width: 38px;
+    height: 38px;
 }
 
 .header .header__right .menu__close.hidden {
-  display: none;
+    display: none;
 }
 
 .header .header__menu .menu .menu__item a {
-  color: #fff;
-  border-bottom: 1px solid transparent;
+    color: #fff;
+    border-bottom: 1px solid transparent;
 }
 
 .header .header__menu .menu .menu__item:hover a {
-  border-bottom-color: #fff;
+    border-bottom-color: #fff;
 }
 
 .header .header__menu .menu .menu__item.active a {
-  color: #f49867;
-  border-bottom-color: #f49867;
+    color: #f49867;
+    border-bottom-color: #f49867;
 }
 
 .header .header__burger_menu {
-  display: flex;
-  flex-direction: column;
-  row-gap: 0.5rem;
-  cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    row-gap: 0.5rem;
+    cursor: pointer;
+    display: none;
 }
 
 .header .header__burger_menu.hidden {
-  display: none;
+    display: none;
 }
 
 .header .header__burger_menu .burger_menu__line,
 .header .header__right .menu__close .menu__line {
-  width: 43px;
-  height: 5px;
-  border-radius: 2px;
-  background: #fff;
+    width: 43px;
+    height: 5px;
+    border-radius: 2px;
+    background: #fff;
 }
 
 .header .header__right .menu__close .menu__line:nth-child(1) {
-  position: relative;
-  top: 15px;
-  right: 4px;
-  transform: rotate(45deg);
-  -webkit-transform: rotate(45deg);
-  -moz-transform: rotate(45deg);
-  -ms-transform: rotate(45deg);
-  -o-transform: rotate(45deg);
+    position: relative;
+    top: 15px;
+    right: 4px;
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
 }
 
 .header .header__right .menu__close .menu__line:nth-child(2) {
-  position: relative;
-  top: 10px;
-  right: 3px;
-  transform: rotate(-45deg);
-  -webkit-transform: rotate(-45deg);
-  -moz-transform: rotate(-45deg);
-  -ms-transform: rotate(-45deg);
-  -o-transform: rotate(-45deg);
+    position: relative;
+    top: 10px;
+    right: 3px;
+    transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+    -moz-transform: rotate(-45deg);
+    -ms-transform: rotate(-45deg);
+    -o-transform: rotate(-45deg);
 }
 
 .header .cta_buttons {
-  display: flex;
-  column-gap: 1rem;
+    display: flex;
+    column-gap: 1rem;
 }
 
-/* Стили для первого экрана (Хиро секция) */
-
 .hero_section {
-  display: flex;
-  justify-content: space-between;
-  column-gap: 1rem;
-  /* min-height: 60vh; */
-  margin: 14rem 0 3rem;
+    display: flex;
+    justify-content: space-between;
+    column-gap: 1rem;
+    margin: 14rem 0 3rem;
 }
 
 .hero_section .hero_section__left {
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  row-gap: 3rem;
-  width: 75%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    row-gap: 3rem;
+    width: 75%;
 }
 
 .hero_section .hero_section__left .left__description {
-  color: #81afdd;
+    color: #81afdd;
 }
 
 .hero_section .hero_section__left .left__cta_buttons {
-  display: flex;
-  width: 100%;
+    display: flex;
+    width: 100%;
 }
 
 .hero_section .hero_section__left .left__cta_buttons input[type="text"] {
-  min-width: 250px;
-  width: 70%;
-  padding: 8px 32px;
-  border-radius: 4px 0 0 4px;
-  border: 1px solid #052d56;
-  border-bottom: none;
-  background-color: #052d56;
+    min-width: 250px;
+    width: 70%;
+    padding: 8px 32px;
+    border-radius: 4px 0 0 4px;
+    border: 1px solid #052d56;
+    border-bottom: none;
+    background-color: #052d56;
+    color: #fff;
+    font-size: 16px;
+}
+
+.hero_section .hero_section__left .left__cta_buttons input[type="text"]::placeholder {
+    color: #81afdd;
+    opacity: 0.7;
 }
 
 .hero_section .hero_section__left .left__cta_buttons .btn {
-  border-radius: 0 4px 4px 0;
+    border-radius: 0 4px 4px 0;
 }
 
 .hero_section .hero_section__right {
-  height: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .hero_section .hero_section__right img {
-  width: 100%;
+    width: 100%;
+    max-width: 500px;
 }
-
-/* Секция брендов */
 
 .brands_section {
-  display: flex;
-  flex-wrap: wrap;
-  row-gap: 2rem;
-  justify-content: center;
-  align-items: center;
-  padding: 0 0 6rem 0;
-  column-gap: 3rem;
+    display: flex;
+    flex-wrap: wrap;
+    row-gap: 2rem;
+    justify-content: center;
+    align-items: center;
+    padding: 0 0 6rem 0;
+    column-gap: 3rem;
 }
 
-/* Что такое Chat GPT */
+.brands_section__img {
+    max-width: 120px;
+    height: auto;
+}
 
 .what_is_chatgpt_section {
-  display: flex;
-  flex-direction: column;
-  padding: 3rem;
-  margin: 6rem 0;
-  row-gap: 7rem;
-  background: url(../assets/img/what_is_gpt_3_bg.svg) no-repeat 0 0 / cover;
+    display: flex;
+    flex-direction: column;
+    padding: 3rem;
+    margin: 6rem 0;
+    row-gap: 7rem;
+    background: url(../assets/img/what_is_gpt_3_bg.svg) no-repeat 0 0 / cover;
 }
 
 .what_is_chatgpt_section .what_is_chatgpt_section__top {
-  display: flex;
-  column-gap: 3rem;
+    display: flex;
+    column-gap: 3rem;
 }
 
 .what_is_chatgpt_section .what_is_chatgpt_section__top .top__header {
-  flex: 30%;
+    flex: 30%;
 }
 
 .what_is_chatgpt_section .what_is_chatgpt_section__top .top__content {
-  flex: 65%;
-  color: #81afdd;
-  font-size: 14px;
+    flex: 65%;
+    color: #81afdd;
+    font-size: 14px;
 }
 
 .what_is_chatgpt_section .what_is_chatgpt_section__middle {
-  display: flex;
-  justify-content: space-between;
-  align-items: start;
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
 }
 
 .what_is_chatgpt_section .what_is_chatgpt_section__middle .middle__header {
-  width: 500px;
+    width: 500px;
 }
 
 .what_is_chatgpt_section .what_is_chatgpt_section__middle a {
-  color: #ff8a71;
-  font-size: 16px;
-  border-bottom: 1px solid transparent;
+    color: #ff8a71;
+    font-size: 16px;
+    border-bottom: 1px solid transparent;
 }
 
 .what_is_chatgpt_section .what_is_chatgpt_section__middle a:hover {
-  border-bottom: 1px solid #ff8a71;
-  transition: all 0.3s ease;
-  -webkit-transition: all 0.3s ease;
-  -moz-transition: all 0.3s ease;
-  -ms-transition: all 0.3s ease;
-  -o-transition: all 0.3s ease;
+    border-bottom: 1px solid #ff8a71;
+    transition: all 0.3s ease;
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    -ms-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
 }
 
 .what_is_chatgpt_section .what_is_chatgpt_section__bottom {
-  display: flex;
-  justify-content: space-between;
-  align-items: start;
-  column-gap: 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+    column-gap: 2rem;
 }
 
 .what_is_chatgpt_section .what_is_chatgpt_section__bottom .bottom__container {
-  display: flex;
-  flex-direction: column;
-  row-gap: 2rem;
+    display: flex;
+    flex-direction: column;
+    row-gap: 2rem;
 }
 
 .what_is_chatgpt_section
-  .what_is_chatgpt_section__bottom
-  .bottom__container
-  .container__content {
-  color: #81afdd;
-  font-size: 14px;
-  line-height: 1.8;
+.what_is_chatgpt_section__bottom
+.bottom__container
+.container__content {
+    color: #81afdd;
+    font-size: 14px;
+    line-height: 1.8;
 }
 
-/* Будущее наступило */
-
 .future_here {
-  display: flex;
-  column-gap: 6rem;
-  margin: 6rem 0 2rem;
+    display: flex;
+    column-gap: 6rem;
+    margin: 6rem 0 2rem;
 }
 
 .future_here .future_here__left {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  row-gap: 2rem;
-  flex: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    row-gap: 2rem;
+    flex: 2;
 }
 
-/* .future_here .future_here__left .left__header {
-} */
-
 .future_here .future_here__left .left__cta {
-  color: #f49867;
-  border-bottom: 1px solid transparent;
+    color: #f49867;
+    border-bottom: 1px solid transparent;
 }
 
 .future_here .future_here__left a:hover {
-  border-bottom: 1px solid #f49867;
-  transition: all 0.3s ease;
-  -webkit-transition: all 0.3s ease;
-  -moz-transition: all 0.3s ease;
-  -ms-transition: all 0.3s ease;
-  -o-transition: all 0.3s ease;
+    border-bottom: 1px solid #f49867;
+    transition: all 0.3s ease;
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    -ms-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
 }
 
 .future_here .future_here__right {
-  flex: 3;
-  display: flex;
-  flex-direction: column;
-  row-gap: 3rem;
+    flex: 3;
+    display: flex;
+    flex-direction: column;
+    row-gap: 3rem;
 }
 
 .future_here .future_here__right .right__container {
-  display: flex;
-  justify-content: space-between;
+    display: flex;
+    justify-content: space-between;
 }
 
 .future_here .future_here__right .right__container .container__header {
-  width: 35%;
+    width: 35%;
 }
 
 .future_here .future_here__right .right__container .container__content {
-  width: 55%;
-  color: #81afdd;
+    width: 55%;
+    color: #81afdd;
 }
 
-/* Медиа запросы для адаптива */
+@media screen and (min-width: 2560px) {
+    .section {
+        max-width: 1800px;
+    }
+
+    h1 {
+        font-size: 80px;
+    }
+
+    h2 {
+        font-size: 48px;
+    }
+
+    h3 {
+        font-size: 32px;
+    }
+
+    p, a, .btn {
+        font-size: 20px;
+    }
+
+    .hero_section {
+        margin: 18rem 0 5rem;
+    }
+
+    .hero_section .hero_section__right img {
+        max-width: 700px;
+    }
+
+    .brands_section__img {
+        max-width: 180px;
+    }
+}
+
+@media screen and (max-width: 1440px) {
+    .section {
+        max-width: 1100px;
+    }
+
+    h1 {
+        font-size: 52px;
+    }
+
+    h2 {
+        font-size: 30px;
+    }
+
+    .hero_section {
+        margin: 12rem 0 3rem;
+    }
+
+    .hero_section .hero_section__right img {
+        max-width: 450px;
+    }
+}
 
 @media screen and (max-width: 1024px) {
-  .page {
-    align-content: center;
-  }
+    .page {
+        align-content: center;
+    }
 
-  .header {
-    padding: 2rem;
-  }
+    .header {
+        padding: 2rem;
+    }
 
-  .header .header__logo .logo__link img {
-    width: 200%;
-  }
+    .header .header__logo .logo__link img {
+        width: 200%;
+    }
 
-  .header .header__right {
-    flex-direction: column-reverse;
-    justify-content: center;
-    align-items: center;
-    row-gap: 53px;
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    width: 100%;
-    height: 100vh;
-    z-index: 9999;
-    background: #031b34;
-  }
+    .header .header__right {
+        flex-direction: column-reverse;
+        justify-content: center;
+        align-items: center;
+        row-gap: 53px;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        width: 100%;
+        height: 100vh;
+        z-index: 9999;
+        background: #031b34;
+    }
 
-  .header .header__menu {
-    display: flex;
-    flex-direction: column;
-    position: relative;
-  }
+    .header .header__menu {
+        display: flex;
+        flex-direction: column;
+        position: relative;
+    }
 
-  .header .header__menu .menu {
-    flex-direction: column;
-    align-items: center;
-    row-gap: 1rem;
-  }
+    .header .header__menu .menu {
+        flex-direction: column;
+        align-items: center;
+        row-gap: 1rem;
+    }
 
-  .header .header__menu .menu__close {
-    position: absolute;
-    right: -100px;
-    top: -100px;
-  }
+    .header .header__menu .menu__close {
+        position: absolute;
+        right: -100px;
+        top: -100px;
+    }
 
-  .header .header__menu .menu .menu__item a {
-    font-size: 48px;
-  }
+    .header .header__menu .menu .menu__item a {
+        font-size: 48px;
+    }
 
-  .hero_section {
-    flex-direction: column;
-    justify-content: center;
-    column-gap: 0;
-    /* margin: 0; */
-    width: 90%;
-  }
+    .header .header__burger_menu {
+        display: flex;
+    }
 
-  .hero_section .hero_section__left {
-    width: 100%;
-    text-align: center;
-  }
+    .hero_section {
+        flex-direction: column;
+        justify-content: center;
+        column-gap: 0;
+        width: 90%;
+        margin: 10rem 0 3rem;
+    }
 
-  .hero_section .hero_section__right {
-    display: flex;
-    justify-content: center;
-  }
+    .hero_section .hero_section__left {
+        width: 100%;
+        text-align: center;
+        row-gap: 2rem;
+    }
 
-  .hero_section .hero_section__right img {
-    width: 60%;
-  }
+    .hero_section .hero_section__right {
+        display: flex;
+        justify-content: center;
+        margin-top: 2rem;
+    }
 
-  .hero_section .hero_section__left .left__cta_buttons {
-    justify-content: center;
-  }
+    .hero_section .hero_section__right img {
+        width: 60%;
+        max-width: 400px;
+    }
 
-  .what_is_chatgpt_section {
-    row-gap: 4rem;
-  }
+    .hero_section .hero_section__left .left__cta_buttons {
+        justify-content: center;
+    }
 
-  .what_is_chatgpt_section .what_is_chatgpt_section__middle {
-    flex-direction: column;
-    row-gap: 1rem;
-  }
+    .hero_section .hero_section__left .left__cta_buttons input[type="text"] {
+        width: 60%;
+    }
 
-  .what_is_chatgpt_section .what_is_chatgpt_section__bottom .bottom__container {
-    row-gap: 0;
-  }
+    .what_is_chatgpt_section {
+        row-gap: 4rem;
+        padding: 2rem;
+    }
 
-  .future_here {
-    column-gap: 0;
-    flex-direction: column;
-    row-gap: 4rem;
-  }
+    .what_is_chatgpt_section .what_is_chatgpt_section__middle {
+        flex-direction: column;
+        row-gap: 1rem;
+    }
 
-  .future_here .future_here__left {
-    row-gap: 1rem;
-  }
+    .what_is_chatgpt_section .what_is_chatgpt_section__bottom .bottom__container {
+        row-gap: 1rem;
+    }
+
+    .future_here {
+        column-gap: 0;
+        flex-direction: column;
+        row-gap: 4rem;
+    }
+
+    .future_here .future_here__left {
+        row-gap: 1rem;
+    }
 }
 
-@media screen and (max-width: 766px) {
-  p {
-    font-size: 14px;
-    line-height: 1.5;
-  }
-  h1 {
-    font-size: 46px;
-  }
+@media screen and (max-width: 768px) {
+    body {
+        padding: 0 1rem;
+    }
 
-  h2 {
-    font-size: 27px;
-  }
+    h1 {
+        font-size: 42px;
+    }
 
-  h3 {
-    font-size: 19px;
-  }
+    h2 {
+        font-size: 26px;
+    }
 
-  .hero_section {
-    width: 100%;
-  }
+    h3 {
+        font-size: 20px;
+    }
 
-  .brands_section {
-    margin-top: -15px;
-    padding-bottom: 0;
-  }
+    .header {
+        padding: 1.5rem 0;
+    }
 
-  .what_is_chatgpt_section .what_is_chatgpt_section__top {
-    flex-direction: column;
-  }
+    .hero_section {
+        margin: 8rem 0 2rem;
+        width: 100%;
+    }
 
-  .hero_section .hero_section__right img {
-    width: 85%;
-  }
+    .hero_section .hero_section__left {
+        row-gap: 1.5rem;
+    }
 
-  .what_is_chatgpt_section .what_is_chatgpt_section__middle .middle__header {
-    width: auto;
-  }
+    .hero_section .hero_section__right img {
+        width: 70%;
+    }
 
-  .what_is_chatgpt_section .what_is_chatgpt_section__bottom {
-    flex-direction: column;
-  }
+    .hero_section .hero_section__left .left__cta_buttons {
+        flex-direction: column;
+        align-items: center;
+        row-gap: 1rem;
+    }
 
-  .what_is_chatgpt_section .what_is_chatgpt_section__bottom {
-    row-gap: 2rem;
-  }
+    .hero_section .hero_section__left .left__cta_buttons input[type="text"] {
+        width: 100%;
+        border-radius: 4px;
+        margin-bottom: 0;
+    }
 
-  .what_is_chatgpt_section {
-    row-gap: 3rem;
-  }
+    .hero_section .hero_section__left .left__cta_buttons .btn {
+        width: 100%;
+        border-radius: 4px;
+    }
 
-  .what_is_chatgpt_section {
-    margin: 6rem 0 0;
-  }
+    .brands_section {
+        padding: 0 0 4rem 0;
+        column-gap: 2rem;
+    }
 
-  .what_is_chatgpt_section
-    .what_is_chatgpt_section__bottom
-    .bottom__container
-    .container__content {
-    line-height: 1.5;
-  }
+    .brands_section__img {
+        max-width: 100px;
+    }
+
+    .what_is_chatgpt_section {
+        margin: 4rem 0;
+        padding: 1.5rem;
+        row-gap: 3rem;
+    }
+
+    .what_is_chatgpt_section .what_is_chatgpt_section__top {
+        flex-direction: column;
+        row-gap: 1rem;
+    }
+
+    .what_is_chatgpt_section .what_is_chatgpt_section__bottom {
+        flex-direction: column;
+        row-gap: 2rem;
+    }
+
+    .future_here {
+        margin: 4rem 0 2rem;
+        row-gap: 3rem;
+    }
 }
 
-@media screen and (max-width: 765px) {
-  a {
-    font-size: 12px;
-  }
+@media screen and (max-width: 425px) {
+    body {
+        padding: 0 0.5rem;
+    }
 
-  p {
-    font-size: 12px;
-  }
+    h1 {
+        font-size: 32px;
+    }
 
-  h1 {
-    font-size: 25px;
-  }
+    h2 {
+        font-size: 22px;
+    }
 
-  h2 {
-    font-size: 19px;
-  }
+    h3 {
+        font-size: 18px;
+    }
 
-  .hero_section .hero_section__left .left__cta_buttons input[type="text"] {
-    min-width: auto;
-  }
+    p, a, .btn {
+        font-size: 14px;
+    }
 
-  .future_here {
-    row-gap: 3rem;
-  }
+    .btn {
+        padding: 0.8rem 1.5rem;
+    }
 
-  .future_here .future_here__right .right__container {
-    flex-direction: column;
-  }
+    .header {
+        padding: 1rem 0;
+    }
 
-  .future_here .future_here__right .right__container .container__header {
-    width: 100%;
-  }
+    .header .header__menu .menu .menu__item a {
+        font-size: 32px;
+    }
 
-  .future_here .future_here__right .right__container .container__content {
-    width: 100%;
-  }
+    .hero_section {
+        margin: 6rem 0 1.5rem;
+    }
 
-  .future_here .future_here__right {
-    row-gap: 2rem;
-  }
+    .hero_section .hero_section__left {
+        row-gap: 1rem;
+    }
+
+    .hero_section .hero_section__right img {
+        width: 85%;
+        max-width: 300px;
+    }
+
+    .brands_section {
+        padding: 0 0 3rem 0;
+        column-gap: 1rem;
+        row-gap: 1rem;
+    }
+
+    .brands_section__img {
+        max-width: 80px;
+    }
+
+    .what_is_chatgpt_section {
+        margin: 3rem 0;
+        padding: 1rem;
+        row-gap: 2rem;
+    }
+
+    .what_is_chatgpt_section .what_is_chatgpt_section__top .top__content,
+    .what_is_chatgpt_section .what_is_chatgpt_section__bottom .bottom__container .container__content {
+        font-size: 12px;
+    }
+
+    .future_here {
+        margin: 3rem 0 1rem;
+        row-gap: 2rem;
+    }
+
+    .future_here .future_here__right .right__container {
+        flex-direction: column;
+        row-gap: 0.5rem;
+    }
+
+    .future_here .future_here__right .right__container .container__header,
+    .future_here .future_here__right .right__container .container__content {
+        width: 100%;
+    }
+
+    .lined_header {
+        padding: 0.5rem 0;
+        background-size: contain;
+    }
 }
