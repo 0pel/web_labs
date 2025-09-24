@@ -21,8 +21,17 @@
     outline: none;
 }
 
+@font-face {
+    font-family: "ManropeVariable";
+    src: url("../fonts/Manrope-VariableFont_wght.ttf");
+}
+
+@font-face {
+    font-family: "ManropeExtraLight";
+    src: url("../fonts/Manrope-ExtraLight.ttf");
+}
 body {
-    background: #031b34;
+    background: #040C18;
     padding: 0 2rem;
     overflow: auto;
 }
@@ -137,7 +146,7 @@ p {
     position: fixed;
     justify-content: space-between;
     align-items: center;
-    background: #031b34;
+    background: #040C18;
     z-index: 10000;
 }
 
@@ -520,7 +529,7 @@ p {
         width: 100%;
         height: 100vh;
         z-index: 9999;
-        background: #031b34;
+        background: #040C18;
     }
 
     .header .header__menu {
@@ -604,9 +613,37 @@ p {
 
     .future_here .future_here__left {
         row-gap: 1rem;
+
+        .feature {
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            gap: 30px;
+        }
+
+        .feature img {
+            width: 70%;
+            order: 2;
+        }
+
+        .feature .feature_left {
+            width: 80%;
+            align-items: center;
+            order: 1;
+        }
+
+        .cta {
+            flex-direction: column;
+            text-align: center;
+            gap: 30px;
+            padding: 30px;
+        }
+
+        .cta .cta_left {
+            width: 100%;
+        }
     }
 }
-
 @media screen and (max-width: 768px) {
     body {
         padding: 0 1rem;
@@ -686,9 +723,40 @@ p {
     .future_here {
         margin: 4rem 0 2rem;
         row-gap: 3rem;
+
+        .feature {
+            margin: 4rem 0;
+            gap: 20px;
+        }
+
+        .feature img {
+            width: 90%;
+        }
+
+        .feature .feature_left {
+            width: 100%;
+            gap: 15px;
+        }
+
+        .feature .feature_left .feature_title {
+            font-size: 28px;
+        }
+
+        .cta {
+            margin: 100px 0;
+            padding: 20px;
+        }
+
+        .cta .cta_left .cta_main {
+            font-size: 20px;
+        }
+
+        .cta_button {
+            padding: 14px 50px;
+            font-size: 16px;
+        }
     }
 }
-
 @media screen and (max-width: 425px) {
     body {
         padding: 0 0.5rem;
@@ -774,6 +842,40 @@ p {
     .lined_header {
         padding: 0.5rem 0;
         background-size: contain;
+    }
+    .feature {
+        margin: 3rem 0;
+    }
+
+    .feature img {
+        width: 100%;
+    }
+
+    .feature .feature_left {
+        gap: 10px;
+    }
+
+    .feature .feature_left .feature_title {
+        font-size: 24px;
+    }
+
+    .feature .feature_left .feature_text,
+    .feature .feature_left .feature_cta {
+        font-size: 14px;
+    }
+
+    .cta {
+        margin: 80px 0;
+        padding: 15px;
+    }
+
+    .cta .cta_left .cta_main {
+        font-size: 18px;
+    }
+
+    .cta_button {
+        padding: 12px 40px;
+        font-size: 14px;
     }
 }
 
@@ -1085,3 +1187,105 @@ p {
         gap: 2rem;
     }
 }
+/* Секция Feature */
+.feature {
+    display: flex;
+    flex-direction: row;
+    align-items: end;
+    justify-content: center;
+    gap: 40px;
+    margin: 6rem 0;
+}
+
+.feature img {
+    width: 50%;
+    max-width: 546px;
+    height: auto;
+}
+
+.feature .feature_left {
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: flex-start;
+    margin-bottom: 20px;
+}
+
+.feature .feature_left .feature_text {
+    color: #81AFDD;
+    font-size: 16px;
+}
+
+.feature .feature_left .feature_title {
+    font-family: "ManropeBold", sans-serif;
+    background: linear-gradient(90deg, #ae67fa 1.84%, #f49867 102.67%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 34px;
+}
+
+.feature .feature_left .feature_cta {
+    color: #FF8A71;
+    text-decoration: none;
+    font-size: 16px;
+    border-bottom: 1px solid transparent;
+}
+
+.feature .feature_left .feature_cta:hover {
+    border-bottom: 1px solid #FF8A71;
+    transition: all 0.3s ease;
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    -ms-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+}
+
+.cta {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(to right, #AE67FA, #F49867);
+    border-radius: 10px;
+    padding: 26px 46px;
+    margin: 150px 0;
+}
+
+.cta .cta_left {
+    width: 50%;
+}
+
+.cta .cta_left p {
+    font-size: 12px;
+    color: black;
+    margin-bottom: 10px;
+}
+
+.cta .cta_left .cta_main {
+    color: black;
+    font-family: "ManropeBold", sans-serif;
+    font-size: 24px;
+    margin: 0;
+}
+
+.cta_button {
+    background: black;
+    color: white;
+    font-size: 18px;
+    border-radius: 40px;
+    padding: 16px 72px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.cta_button:hover {
+    background: #333;
+    transform: translateY(-2px);
+}
+
+
+
+
