@@ -1,4 +1,4 @@
-import heroData, {type HeroButton, type HeroIllustration} from "../mockData/heroData.ts"
+import heroData, {type HeroButton, type HeroIllustration} from "../../mockData/heroData.ts"
 
 type HeaderProps = {
     header: string

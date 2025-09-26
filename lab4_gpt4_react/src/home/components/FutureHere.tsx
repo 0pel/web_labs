@@ -1,4 +1,4 @@
-import futureHereData, {type FutureHerePost} from "../mockData/futureHereData.ts"
+import futureHereData, {type FutureHerePost} from "../../mockData/futureHereData.ts"
 
 type RightContainerProps = {
     item: FutureHerePost

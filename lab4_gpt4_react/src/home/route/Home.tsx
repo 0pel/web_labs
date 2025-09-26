@@ -1,15 +1,14 @@
-import Header from "../components/Header.tsx"
 import Hero from "../components/Hero.tsx"
 import Brands from "../components/Brands.tsx"
 import WhatIsChatGpt from "../components/WhatIsChatGpt.tsx"
 import FutureHere from "../components/FutureHere.tsx"
+import Header from "@/home/components/Header.tsx"
+import {cn} from "@/lib/utils.ts"
 
 export default function Home() {
     return (
-        <>
-            <section className="section header">
-                <Header/>
-            </section>
+        <div className={cn("flex flex-col items-center max-w-[1224px] mx-auto")}>
+            <Header/>
             <section className="section hero_section">
                 <Hero/>
             </section>
@@ -22,6 +21,6 @@ export default function Home() {
             <section className="section future_here">
                 <FutureHere/>
             </section>
-        </>
+        </div>
     )
 }

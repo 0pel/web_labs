@@ -1,4 +1,4 @@
-import whatIsGptData, {type BlogPost, type BlogWithButton} from "../mockData/whatIsGptData.ts"
+import whatIsGptData, {type BlogPost, type BlogWithButton} from "../../mockData/whatIsGptData.ts"
 
 type WhatIsGptTopProps = {
     data: BlogPost

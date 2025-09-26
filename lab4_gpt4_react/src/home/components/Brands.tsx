@@ -1,4 +1,4 @@
-import brandsData, {type Brand} from "../mockData/brandsData.ts"
+import brandsData, {type Brand} from "../../mockData/brandsData.ts"
 
 type BrandsImageProps = {
     brand: Brand
