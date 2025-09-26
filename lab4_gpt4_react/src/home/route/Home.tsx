@@ -3,23 +3,24 @@ import Brands from "../components/Brands.tsx"
 import WhatIsChatGpt from "../components/WhatIsChatGpt.tsx"
 import FutureHere from "../components/FutureHere.tsx"
 import Header from "@/home/components/Header.tsx"
-import {cn} from "@/lib/utils.ts"
+import { cn } from "@/lib/utils.ts"
 
 export default function Home() {
     return (
-        <div className={cn("flex flex-col items-center max-w-[1224px] mx-auto")}>
-            <Header/>
-            <section className="section hero_section">
-                <Hero/>
-            </section>
-            <section className="section brands_section">
-                <Brands/>
-            </section>
+        <div
+            className={cn(
+                "flex flex-col items-center max-w-[1224px] mx-auto px-4 gap-20",
+            )}
+        >
+            <Header />
+            <Hero />
+            <Brands />
+
             <section className="section what_is_chatgpt_section">
-                <WhatIsChatGpt/>
+                <WhatIsChatGpt />
             </section>
             <section className="section future_here">
-                <FutureHere/>
+                <FutureHere />
             </section>
         </div>
     )

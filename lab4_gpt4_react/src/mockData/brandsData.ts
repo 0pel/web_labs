@@ -6,7 +6,7 @@ import shopifySvg from "../assets/img/brands/shopify.svg"
 
 export type Brand = {
     id: number
-    src: string,
+    src: string
     alt: string
 }
 

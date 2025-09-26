@@ -1,0 +1,21 @@
+import * as React from "react"
+import { cn } from "@/lib/utils.ts"
+
+export default function H1({
+    children,
+    className,
+    ...props
+}: React.ComponentProps<"h1">) {
+    return (
+        <h1
+            className={cn(
+                "font-manrope-bold text-[62px]",
+                "text-transparent bg-clip-text bg-gradient-to-r from-[#AE67FA] to-[#F49867]",
+                className,
+            )}
+            {...props}
+        >
+            {children}
+        </h1>
+    )
+}

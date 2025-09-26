@@ -1,4 +1,7 @@
-import whatIsGptData, {type BlogPost, type BlogWithButton} from "../../mockData/whatIsGptData.ts"
+import whatIsGptData, {
+    type BlogPost,
+    type BlogWithButton,
+} from "../../mockData/whatIsGptData.ts"
 
 type WhatIsGptTopProps = {
     data: BlogPost
@@ -15,8 +18,8 @@ type WhatIsGptBottomProps = {
     data: BlogPost[]
 }
 
-function WhatIsGptTop({data}: Readonly<WhatIsGptTopProps>) {
-    const {header, content} = data
+function WhatIsGptTop({ data }: Readonly<WhatIsGptTopProps>) {
+    const { header, content } = data
     return (
         <>
             <h3 className="top__header lined_header">{header}</h3>
@@ -25,10 +28,10 @@ function WhatIsGptTop({data}: Readonly<WhatIsGptTopProps>) {
     )
 }
 
-function WhatIsGptMiddle({data}: Readonly<WhatIsGptMiddleProps>) {
+function WhatIsGptMiddle({ data }: Readonly<WhatIsGptMiddleProps>) {
     const {
         header,
-        button: {href, title},
+        button: { href, title },
     } = data
 
     return (
@@ -41,8 +44,8 @@ function WhatIsGptMiddle({data}: Readonly<WhatIsGptMiddleProps>) {
     )
 }
 
-function WhatIsGptContainer({item}: Readonly<WhatIsGptContainerProps>) {
-    const {header, content} = item
+function WhatIsGptContainer({ item }: Readonly<WhatIsGptContainerProps>) {
+    const { header, content } = item
 
     return (
         <div className="bottom__container">
@@ -52,31 +55,25 @@ function WhatIsGptContainer({item}: Readonly<WhatIsGptContainerProps>) {
     )
 }
 
-function WhatIsGptBottom({data}: WhatIsGptBottomProps) {
-    return (
-        data.map((item) => (
-            <WhatIsGptContainer key={item.id} item={item}/>
-        ))
-    )
+function WhatIsGptBottom({ data }: WhatIsGptBottomProps) {
+    return data.map((item) => <WhatIsGptContainer key={item.id} item={item} />)
 }
 
 export default function WhatIsChatGpt() {
-    const {
-        whatIsGptTopData, whatIsGptMiddleData, whatIsGptBottomData,
-    } = whatIsGptData
+    const { whatIsGptTopData, whatIsGptMiddleData, whatIsGptBottomData } =
+        whatIsGptData
 
     return (
         <>
             <div className="what_is_chatgpt_section__top">
-                <WhatIsGptTop data={whatIsGptTopData}/>
+                <WhatIsGptTop data={whatIsGptTopData} />
             </div>
             <div className="what_is_chatgpt_section__middle">
-                <WhatIsGptMiddle data={whatIsGptMiddleData}/>
+                <WhatIsGptMiddle data={whatIsGptMiddleData} />
             </div>
             <div className="what_is_chatgpt_section__bottom">
-                <WhatIsGptBottom data={whatIsGptBottomData}/>
+                <WhatIsGptBottom data={whatIsGptBottomData} />
             </div>
         </>
     )
 }
-

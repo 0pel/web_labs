@@ -1,31 +1,31 @@
 import IllustrationSvg from "../assets/img/Illustration.svg"
 
 export type HeroButton = {
-    id : number,
-    type: "input" | "button",
+    id: number
+    type: "email" | "button"
     title: string
 }
 
 export type HeroIllustration = {
-    src: string,
+    src: string
     alt: string
 }
 
 export type HeroData = {
-    header: string,
-    description: string,
-    heroCtaButtons: HeroButton[],
-    illustration: HeroIllustration,
+    header: string
+    description: string
+    heroButtons: HeroButton[]
+    illustration: HeroIllustration
 }
 
-export const heroCtaButtons: HeroButton[] = [
+export const heroButtons: HeroButton[] = [
     {
-        id : 1,
-        type: "input",
+        id: 1,
+        type: "email",
         title: "Введите Email",
     },
     {
-        id : 2,
+        id: 2,
         type: "button",
         title: "Начать",
     },
@@ -39,12 +39,15 @@ export const illustration: HeroIllustration = {
 export const header = "Построим Что-нибудь Невероятное с GPT-4 OpenAI"
 
 export const description =
-    "Однако кровать для помощи в путешествии неприятна. Не мысли все осуществляют благословение. Снисхождение ко всему, радость, изменение бурной привязанности. Вечеринку мы лет на заказ разрешил"
+    "Однако кровать для помощи в путешествии неприятна. " +
+    "Не мысли все осуществляют благословение. " +
+    "Снисхождение ко всему, радость, изменение бурной привязанности. " +
+    "Вечеринку мы лет на заказ разрешили."
 
 const heroData: HeroData = {
     header,
     description,
-    heroCtaButtons,
+    heroButtons,
     illustration,
 }
 export default heroData

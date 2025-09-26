@@ -1,27 +1,27 @@
 import logoSvg from "../assets/img/logo.svg"
 
 export type HeaderData = {
-    logoData: HeaderLogoData,
-    menuData: HeaderMenuLink[],
-    buttonsData: HeaderAuthButton[],
+    logoData: HeaderLogoData
+    menuData: HeaderMenuLink[]
+    buttonsData: HeaderAuthButton[]
 }
 
 export type HeaderMenuLink = {
     id: number
-    title: string,
+    title: string
     href: string
 }
 export type HeaderAuthButton = {
-    id: number,
-    title: string,
-    href: string,
+    id: number
+    title: string
+    href: string
     isPrimary: boolean
 }
 
 export type HeaderLogoData = {
-    alt: string,
-    src: string,
-    href: string,
+    alt: string
+    src: string
+    href: string
 }
 
 export const menuData: HeaderMenuLink[] = [

@@ -1,9 +1,7 @@
 import Home from "./home/route/Home.tsx"
 
 function App() {
-    return (
-        <Home/>
-    )
+    return <Home />
 }
 
 export default App

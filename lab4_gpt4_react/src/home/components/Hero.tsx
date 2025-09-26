@@ -1,74 +1,108 @@
-import heroData, {type HeroButton, type HeroIllustration} from "../../mockData/heroData.ts"
+import heroData, {
+    type HeroButton,
+    type HeroIllustration,
+} from "@/mockData/heroData.ts"
+import H1 from "@/components/h1.tsx"
+import Input from "@/components/ui/input.tsx"
+import Button from "@/components/ui/button.tsx"
+import { cn } from "@/lib/utils.ts"
+import P from "@/components/p.tsx"
 
 type HeaderProps = {
     header: string
+}
+
+function Header({ header }: Readonly<HeaderProps>) {
+    return <H1>{header}</H1>
 }
 
 type DescriptionProps = {
     description: string
 }
 
+function Description({ description }: Readonly<DescriptionProps>) {
+    return <P className={cn("w-3/5")}>{description}</P>
+}
+
 type ButtonProps = {
-    ctaButton: HeroButton
+    button: HeroButton
+}
+
+function HeroButton({ button }: Readonly<ButtonProps>) {
+    const { type, title } = button
+    switch (type) {
+        case "email":
+            return (
+                <Input
+                    className={cn(
+                        "placeholder:text-secondary-foreground",
+                        "placeholder:text-xl text-xl",
+                        "bg-secondary border-none focus-visible:ring-0",
+                        "rounded-l-[5px] rounded-r-none",
+                        "h-[72px] min-w-xs pl-8",
+                    )}
+                    type="email"
+                    name={title}
+                    autoComplete="on"
+                    placeholder={title}
+                />
+            )
+        case "button":
+            return (
+                <Button
+                    className={cn(
+                        "hover:bg-accent",
+                        "rounded-l-none rounded-r-[5px]",
+                        "h-[72px] w-[128px] text-xl",
+                    )}
+                    size="lg"
+                >
+                    {title}
+                </Button>
+            )
+    }
 }
 
 type ButtonsProps = {
-    ctaButtons: HeroButton[]
+    buttons: HeroButton[]
+}
+
+function Buttons({ buttons }: Readonly<ButtonsProps>) {
+    return (
+        <div className={cn("flex flex-row")}>
+            {buttons.map((ctaButton) => (
+                <HeroButton key={ctaButton.id} button={ctaButton} />
+            ))}
+        </div>
+    )
 }
 
 type IllustrationProps = {
     illustration: HeroIllustration
 }
 
-function Header({header}: Readonly<HeaderProps>) {
-    return <h1 className="left__header">{header}</h1>
-}
-
-function Description({description}: Readonly<DescriptionProps>) {
-    return <p className="left__description">{description}</p>
-}
-
-function Button({ctaButton}: Readonly<ButtonProps>) {
-    const {type, title} = ctaButton
-    switch (type) {
-        case "input":
-            return <input type="text" placeholder={title}/>
-
-        case "button":
-            return (
-                <button className="cta_buttons__signin btn primary-btn">{title}</button>
-            )
-    }
-}
-
-function Buttons({ctaButtons}: Readonly<ButtonsProps>) {
-    return (
-        <div className="left__cta_buttons">
-            {ctaButtons.map((ctaButton) => (
-                <Button key={ctaButton.id} ctaButton={ctaButton}/>
-            ))}
-        </div>
-    )
-}
-
-function Illustration({illustration}: Readonly<IllustrationProps>) {
-    const {alt, src} = illustration
-    return <img src={src} alt={alt}/>
+function Illustration({ illustration }: Readonly<IllustrationProps>) {
+    const { alt, src } = illustration
+    return <img src={src} alt={alt} />
 }
 
 export default function Hero() {
-    const {header, description, illustration, heroCtaButtons} = heroData
+    const { header, description, illustration, heroButtons } = heroData
 
     return (
-        <>
-            <div className="hero_section__left">
-                <Header header={header}/>
-                <Description description={description}/>
-                <Buttons ctaButtons={heroCtaButtons}/>
+        <section className={cn("flex flex-col lg:flex-row")}>
+            <div
+                className={cn(
+                    "flex flex-col text-center lg:text-left items-center lg:w-7/10 lg:items-stretch gap-8",
+                )}
+            >
+                <Header header={header} />
+                <Description description={description} />
+                <Buttons buttons={heroButtons} />
             </div>
-            <div className="hero_section__right">
-                <Illustration illustration={illustration}/>
+            <div className={cn("flex justify-center")}>
+                <Illustration illustration={illustration} />
             </div>
-        </>
+        </section>
     )
 }

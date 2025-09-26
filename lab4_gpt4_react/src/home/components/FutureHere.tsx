@@ -1,11 +1,13 @@
-import futureHereData, {type FutureHerePost} from "../../mockData/futureHereData.ts"
+import futureHereData, {
+    type FutureHerePost,
+} from "../../mockData/futureHereData.ts"
 
 type RightContainerProps = {
     item: FutureHerePost
 }
 
-function RightContainer({item}: Readonly<RightContainerProps>) {
-    const {title, description} = item
+function RightContainer({ item }: Readonly<RightContainerProps>) {
+    const { title, description } = item
 
     return (
         <div className="right__container">
@@ -20,8 +22,8 @@ export default function FutureHere() {
         <>
             <div className="future_here__left">
                 <h2 className="left__header">
-                    Будущее Уже Наступило и Тебе Нужно Лишь Осознать. Шагни в Будущее и
-                    Воплоти Его.
+                    Будущее Уже Наступило и Тебе Нужно Лишь Осознать. Шагни в
+                    Будущее и Воплоти Его.
                 </h2>
                 <a href="/future-here" className="left__cta">
                     Запросить ранний доступ
@@ -29,7 +31,7 @@ export default function FutureHere() {
             </div>
             <div className="future_here__right">
                 {futureHereData.map((item) => (
-                    <RightContainer key={item.id} item={item}/>
+                    <RightContainer key={item.id} item={item} />
                 ))}
             </div>
         </>
