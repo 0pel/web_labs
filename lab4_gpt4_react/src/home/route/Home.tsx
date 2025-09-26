@@ -15,13 +15,8 @@ export default function Home() {
             <Header />
             <Hero />
             <Brands />
-
-            <section className="section what_is_chatgpt_section">
-                <WhatIsChatGpt />
-            </section>
-            <section className="section future_here">
-                <FutureHere />
-            </section>
+            <WhatIsChatGpt />
+            <FutureHere />
         </div>
     )
 }

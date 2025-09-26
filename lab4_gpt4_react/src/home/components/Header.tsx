@@ -220,7 +220,7 @@ export default function Header() {
     return (
         <header
             className={cn(
-                "flex w-full flex-col lg:flex-row",
+                "flex w-[101%] flex-col lg:flex-row z-10",
                 "sticky",
                 "top-0",
                 "bg-background",

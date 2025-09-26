@@ -1,6 +1,12 @@
 import futureHereData, {
     type FutureHerePost,
-} from "../../mockData/futureHereData.ts"
+} from "@/mockData/futureHereData.ts"
+import H2 from "@/components/h2.tsx"
+import H3 from "@/components/h3.tsx"
+import P from "@/components/p.tsx"
+import { cn } from "@/lib/utils.ts"
+import Line from "@/components/GradientLine.tsx"
+import Button from "@/components/ui/button.tsx"
 
 type RightContainerProps = {
     item: FutureHerePost
@@ -10,30 +16,38 @@ function RightContainer({ item }: Readonly<RightContainerProps>) {
     const { title, description } = item
 
     return (
-        <div className="right__container">
-            <h3 className="container__header lined_header">{title}</h3>
-            <p className="container__content">{description}</p>
+        <div className={cn("flex flex-row justify-between")}>
+            <H3 className={cn("max-w-2/5")}>
+                <Line />
+                {title}
+            </H3>
+            <P className={cn("max-w-1/2 text-sm")}>{description}</P>
         </div>
     )
 }
 
 export default function FutureHere() {
     return (
-        <>
-            <div className="future_here__left">
-                <h2 className="left__header">
+        <section className={cn("flex flex-row justify-between gap-18")}>
+            <div className={cn("flex flex-col gap-8 items-start")}>
+                <H2 className={cn("font-manrope-bold")}>
                     Будущее Уже Наступило и Тебе Нужно Лишь Осознать. Шагни в
                     Будущее и Воплоти Его.
-                </h2>
-                <a href="/future-here" className="left__cta">
-                    Запросить ранний доступ
-                </a>
+                </H2>
+                <Button
+                    asChild
+                    variant="link"
+                    className={cn("text-[#FF8A71]")}
+                    size="sm"
+                >
+                    <a href="/future-here">Запросить ранний доступ</a>
+                </Button>
             </div>
-            <div className="future_here__right">
+            <div className={cn("flex flex-col gap-5")}>
                 {futureHereData.map((item) => (
                     <RightContainer key={item.id} item={item} />
                 ))}
             </div>
-        </>
+        </section>
     )
 }

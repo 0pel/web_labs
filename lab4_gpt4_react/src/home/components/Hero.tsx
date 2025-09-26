@@ -21,7 +21,7 @@ type DescriptionProps = {
 }
 
 function Description({ description }: Readonly<DescriptionProps>) {
-    return <P className={cn("w-3/5")}>{description}</P>
+    return <P className={cn("w-9/10 text-xl")}>{description}</P>
 }
 
 type ButtonProps = {

@@ -1,31 +1,33 @@
 import whatIsGptData, {
     type BlogPost,
     type BlogWithButton,
-} from "../../mockData/whatIsGptData.ts"
+} from "@/mockData/whatIsGptData.ts"
+import H3 from "@/components/h3.tsx"
+import P from "@/components/p.tsx"
+import H2 from "@/components/h2"
+import { cn } from "@/lib/utils.ts"
+import Line from "@/components/GradientLine.tsx"
+import Button from "@/components/ui/button.tsx"
 
 type WhatIsGptTopProps = {
     data: BlogPost
 }
 
-type WhatIsGptMiddleProps = {
-    data: BlogWithButton
-}
-type WhatIsGptContainerProps = {
-    item: BlogPost
-}
-
-type WhatIsGptBottomProps = {
-    data: BlogPost[]
-}
-
 function WhatIsGptTop({ data }: Readonly<WhatIsGptTopProps>) {
     const { header, content } = data
     return (
-        <>
-            <h3 className="top__header lined_header">{header}</h3>
-            <p className="top__content">{content}</p>
-        </>
+        <div className={cn("flex flex-row justify-between gap-32")}>
+            <H3 className={cn("min-w-36")}>
+                <Line />
+                {header}
+            </H3>
+            <P>{content}</P>
+        </div>
     )
+}
+
+type WhatIsGptMiddleProps = {
+    data: BlogWithButton
 }
 
 function WhatIsGptMiddle({ data }: Readonly<WhatIsGptMiddleProps>) {
@@ -35,28 +37,45 @@ function WhatIsGptMiddle({ data }: Readonly<WhatIsGptMiddleProps>) {
     } = data
 
     return (
-        <>
-            <h2 className="middle__header">{header}</h2>
-            <a href={href} className="middle_cta">
-                {title}
-            </a>
-        </>
+        <div className={cn("flex justify-between items-center")}>
+            <H2 className={cn("font-manrope-bold max-w-1/2")}>{header}</H2>
+            <Button asChild variant="link" className={cn("text-[#FF8A71]")}>
+                <a href={href}>{title}</a>
+            </Button>
+        </div>
     )
+}
+
+type WhatIsGptContainerProps = {
+    item: BlogPost
 }
 
 function WhatIsGptContainer({ item }: Readonly<WhatIsGptContainerProps>) {
     const { header, content } = item
 
     return (
-        <div className="bottom__container">
-            <h3 className="container__header lined_header">{header}</h3>
-            <p className="container__content">{content}</p>
+        <div className={cn("flex flex-col gap-6")}>
+            <H3>
+                <Line />
+                {header}
+            </H3>
+            <P>{content}</P>
         </div>
     )
 }
 
-function WhatIsGptBottom({ data }: WhatIsGptBottomProps) {
-    return data.map((item) => <WhatIsGptContainer key={item.id} item={item} />)
+type WhatIsGptBottomProps = {
+    data: BlogPost[]
+}
+
+function WhatIsGptBottom({ data }: Readonly<WhatIsGptBottomProps>) {
+    return (
+        <div className={cn("flex flex-row justify-between gap-2")}>
+            {data.map((item) => (
+                <WhatIsGptContainer key={item.id} item={item} />
+            ))}
+        </div>
+    )
 }
 
 export default function WhatIsChatGpt() {
@@ -64,16 +83,15 @@ export default function WhatIsChatGpt() {
         whatIsGptData
 
     return (
-        <>
-            <div className="what_is_chatgpt_section__top">
-                <WhatIsGptTop data={whatIsGptTopData} />
-            </div>
-            <div className="what_is_chatgpt_section__middle">
-                <WhatIsGptMiddle data={whatIsGptMiddleData} />
-            </div>
-            <div className="what_is_chatgpt_section__bottom">
-                <WhatIsGptBottom data={whatIsGptBottomData} />
-            </div>
-        </>
+        <section
+            className={cn(
+                "bg-[url(@/assets/img/what_is_gpt_3_bg.svg)] bg-cover p-14",
+                "flex flex-col justify-between gap-12",
+            )}
+        >
+            <WhatIsGptTop data={whatIsGptTopData} />
+            <WhatIsGptMiddle data={whatIsGptMiddleData} />
+            <WhatIsGptBottom data={whatIsGptBottomData} />
+        </section>
     )
 }
