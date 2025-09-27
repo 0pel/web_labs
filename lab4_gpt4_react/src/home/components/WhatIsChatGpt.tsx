@@ -16,12 +16,16 @@ type WhatIsGptTopProps = {
 function WhatIsGptTop({ data }: Readonly<WhatIsGptTopProps>) {
     const { header, content } = data
     return (
-        <div className={cn("flex flex-row justify-between gap-32")}>
-            <H3 className={cn("min-w-36")}>
+        <div
+            className={cn(
+                "flex flex-col lg:flex-row justify-between gap-10 lg:gap-32",
+            )}
+        >
+            <H3>
                 <Line />
                 {header}
             </H3>
-            <P>{content}</P>
+            <P className={"lg:max-w-2/3"}>{content}</P>
         </div>
     )
 }
@@ -85,7 +89,7 @@ export default function WhatIsChatGpt() {
     return (
         <section
             className={cn(
-                "bg-[url(@/assets/img/what_is_gpt_3_bg.svg)] bg-cover p-14",
+                "bg-[url(@/assets/img/what_is_gpt_3_bg.svg)] bg-cover p-8 lg:p-14",
                 "flex flex-col justify-between gap-12",
             )}
         >
