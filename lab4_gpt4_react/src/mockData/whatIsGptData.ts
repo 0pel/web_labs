@@ -1,3 +1,5 @@
+import type { Link } from "@/lib/types.ts"
+
 export type BlogPost = {
     id: number
     header: string
@@ -6,10 +8,7 @@ export type BlogPost = {
 
 export type BlogWithButton = {
     header: string
-    button: {
-        href: string
-        title: string
-    }
+    button: Link
 }
 
 export type BlogPostData = {

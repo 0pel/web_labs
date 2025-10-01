@@ -4,6 +4,7 @@ import WhatIsChatGpt from "../components/WhatIsChatGpt.tsx"
 import FutureHere from "../components/FutureHere.tsx"
 import Header from "@/home/components/Header.tsx"
 import { cn } from "@/lib/utils.ts"
+import Feature from "@/home/components/Feature.tsx"
 
 export default function Home() {
     return (
@@ -17,6 +18,7 @@ export default function Home() {
             <Brands />
             <WhatIsChatGpt />
             <FutureHere />
+            <Feature />
         </div>
     )
 }

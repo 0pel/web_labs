@@ -3,12 +3,9 @@ import slackSvg from "../assets/img/brands/slack.svg"
 import atlassianSvg from "../assets/img/brands/atlassian.svg"
 import dropboxSvg from "../assets/img/brands/dropbox.svg"
 import shopifySvg from "../assets/img/brands/shopify.svg"
+import type { Image } from "@/lib/types.ts"
 
-export type Brand = {
-    id: number
-    src: string
-    alt: string
-}
+export type Brand = Image & { id: number }
 
 const brandsData: Brand[] = [
     {

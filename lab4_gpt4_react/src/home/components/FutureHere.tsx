@@ -37,7 +37,7 @@ export default function FutureHere() {
                 <Button
                     asChild
                     variant="link"
-                    className={cn("text-[#FF8A71]")}
+                    className={cn("text-tertiary px-0")}
                     size="sm"
                 >
                     <a href="/future-here">Запросить ранний доступ</a>

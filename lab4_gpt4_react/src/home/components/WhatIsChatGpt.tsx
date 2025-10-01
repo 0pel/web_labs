@@ -18,7 +18,8 @@ function WhatIsGptTop({ data }: Readonly<WhatIsGptTopProps>) {
     return (
         <div
             className={cn(
-                "flex flex-col lg:flex-row justify-between gap-10 lg:gap-32",
+                "flex flex-col lg:flex-row justify-between",
+                "gap-10 lg:gap-32",
             )}
         >
             <H3>
@@ -43,7 +44,7 @@ function WhatIsGptMiddle({ data }: Readonly<WhatIsGptMiddleProps>) {
     return (
         <div className={cn("flex justify-between items-center")}>
             <H2 className={cn("font-manrope-bold max-w-1/2")}>{header}</H2>
-            <Button asChild variant="link" className={cn("text-[#FF8A71]")}>
+            <Button asChild variant="link" className={cn("text-tertiary")}>
                 <a href={href}>{title}</a>
             </Button>
         </div>

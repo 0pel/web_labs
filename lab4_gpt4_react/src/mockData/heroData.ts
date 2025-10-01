@@ -1,4 +1,5 @@
 import IllustrationSvg from "../assets/img/Illustration.svg"
+import type { Image } from "@/lib/types.ts"
 
 export type HeroButton = {
     id: number
@@ -6,16 +7,11 @@ export type HeroButton = {
     title: string
 }
 
-export type HeroIllustration = {
-    src: string
-    alt: string
-}
-
 export type HeroData = {
     header: string
     description: string
     heroButtons: HeroButton[]
-    illustration: HeroIllustration
+    illustration: Image
 }
 
 export const heroButtons: HeroButton[] = [
@@ -31,7 +27,7 @@ export const heroButtons: HeroButton[] = [
     },
 ]
 
-export const illustration: HeroIllustration = {
+export const illustration: Image = {
     src: IllustrationSvg,
     alt: "gpt3",
 }

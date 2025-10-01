@@ -1,4 +1,5 @@
 import logoSvg from "../assets/img/logo.svg"
+import type { Image, Link } from "@/lib/types.ts"
 
 export type HeaderData = {
     logoData: HeaderLogoData
@@ -6,23 +7,9 @@ export type HeaderData = {
     buttonsData: HeaderAuthButton[]
 }
 
-export type HeaderMenuLink = {
-    id: number
-    title: string
-    href: string
-}
-export type HeaderAuthButton = {
-    id: number
-    title: string
-    href: string
-    isPrimary: boolean
-}
-
-export type HeaderLogoData = {
-    alt: string
-    src: string
-    href: string
-}
+export type HeaderMenuLink = Link & { id: number }
+export type HeaderAuthButton = HeaderMenuLink & { isPrimary: boolean }
+export type HeaderLogoData = Image & { href: string }
 
 export const menuData: HeaderMenuLink[] = [
     {

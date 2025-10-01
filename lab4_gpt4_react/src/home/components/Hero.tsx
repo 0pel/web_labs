@@ -1,12 +1,10 @@
-import heroData, {
-    type HeroButton,
-    type HeroIllustration,
-} from "@/mockData/heroData.ts"
+import heroData, { type HeroButton } from "@/mockData/heroData.ts"
 import H1 from "@/components/h1.tsx"
 import Input from "@/components/ui/input.tsx"
 import Button from "@/components/ui/button.tsx"
 import { cn } from "@/lib/utils.ts"
 import P from "@/components/p.tsx"
+import type { Image } from "@/lib/types.ts"
 
 type HeaderProps = {
     header: string
@@ -78,7 +76,7 @@ function Buttons({ buttons }: Readonly<ButtonsProps>) {
 }
 
 type IllustrationProps = {
-    illustration: HeroIllustration
+    illustration: Image
 }
 
 function Illustration({ illustration }: Readonly<IllustrationProps>) {
