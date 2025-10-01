@@ -1,9 +1,9 @@
 import heroData, { type HeroButton } from "@/mockData/heroData.ts"
-import H1 from "@/components/h1.tsx"
+import H1 from "@/components/ui/h1.tsx"
 import Input from "@/components/ui/input.tsx"
 import Button from "@/components/ui/button.tsx"
 import { cn } from "@/lib/utils.ts"
-import P from "@/components/p.tsx"
+import P from "@/components/ui/p.tsx"
 import type { Image } from "@/lib/types.ts"
 
 type HeaderProps = {

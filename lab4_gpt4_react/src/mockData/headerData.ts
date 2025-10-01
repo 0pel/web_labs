@@ -1,4 +1,4 @@
-import logoSvg from "../assets/img/logo.svg"
+import logoSvg from "@/assets/img/logo.svg"
 import type { Image, Link } from "@/lib/types.ts"
 
 export type HeaderData = {

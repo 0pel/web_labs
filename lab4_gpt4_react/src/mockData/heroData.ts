@@ -1,4 +1,4 @@
-import IllustrationSvg from "../assets/img/Illustration.svg"
+import IllustrationSvg from "@/assets/img/Illustration.svg"
 import type { Image } from "@/lib/types.ts"
 
 export type HeroButton = {

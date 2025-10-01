@@ -1,9 +1,9 @@
 import futureHereData, {
     type FutureHerePost,
 } from "@/mockData/futureHereData.ts"
-import H2 from "@/components/h2.tsx"
-import H3 from "@/components/h3.tsx"
-import P from "@/components/p.tsx"
+import H2 from "@/components/ui/h2.tsx"
+import H3 from "@/components/ui/h3.tsx"
+import P from "@/components/ui/p.tsx"
 import { cn } from "@/lib/utils.ts"
 import Line from "@/components/GradientLine.tsx"
 import Button from "@/components/ui/button.tsx"

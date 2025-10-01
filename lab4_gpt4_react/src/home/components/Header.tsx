@@ -7,7 +7,7 @@ import headerData, {
 } from "@/mockData/headerData.ts"
 import { cn } from "@/lib/utils.ts"
 import { Menu, X } from "lucide-react"
-import useIsMobile from "@/home/hooks/UseIsMobile.ts"
+import useIsMobile from "@/home/hooks/useIsMobile.ts"
 import { useEffect, useState } from "react"
 
 type ButtonProps = {

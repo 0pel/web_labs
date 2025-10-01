@@ -2,9 +2,9 @@ import whatIsGptData, {
     type BlogPost,
     type BlogWithButton,
 } from "@/mockData/whatIsGptData.ts"
-import H3 from "@/components/h3.tsx"
-import P from "@/components/p.tsx"
-import H2 from "@/components/h2"
+import H3 from "@/components/ui/h3.tsx"
+import P from "@/components/ui/p.tsx"
+import H2 from "@/components/ui/h2.tsx"
 import { cn } from "@/lib/utils.ts"
 import Line from "@/components/GradientLine.tsx"
 import Button from "@/components/ui/button.tsx"

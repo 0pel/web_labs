@@ -1,8 +1,8 @@
-import featureData, { type FeatureData } from "@/mockData/feature.ts"
+import featureData, { type FeatureData } from "@/mockData/featureData.ts"
 import Button from "@/components/ui/button.tsx"
-import { cn } from "@/lib/utils"
-import H2 from "@/components/h2.tsx"
-import P from "@/components/p.tsx"
+import { cn } from "@/lib/utils.ts"
+import H2 from "@/components/ui/h2.tsx"
+import P from "@/components/ui/p.tsx"
 import type { Link } from "@/lib/types.ts"
 
 type LinkProps = {

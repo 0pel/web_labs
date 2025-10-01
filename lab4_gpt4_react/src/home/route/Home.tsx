@@ -5,6 +5,8 @@ import FutureHere from "../components/FutureHere.tsx"
 import Header from "@/home/components/Header.tsx"
 import { cn } from "@/lib/utils.ts"
 import Feature from "@/home/components/Feature.tsx"
+import Register from "@/home/components/Register.tsx"
+import Blogs from "@/home/components/Blogs.tsx"
 
 export default function Home() {
     return (
@@ -19,6 +21,8 @@ export default function Home() {
             <WhatIsChatGpt />
             <FutureHere />
             <Feature />
+            <Register />
+            <Blogs />
         </div>
     )
 }
