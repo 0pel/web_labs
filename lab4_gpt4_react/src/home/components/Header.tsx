@@ -193,7 +193,7 @@ function BurgerMenu({ data }: Readonly<MenuProps>) {
             <div
                 className={cn(
                     "z-40 overflow-auto overscroll-contain ",
-                    "relative inset-0 top-0 left-0 right-0 bottom-0 bg-background",
+                    "relative inset-0 top-0 left-0 right-0 bottom-0",
                     "flex flex-col items-center gap-6",
                     "transition-all ease-in-out duration-200",
                     isOpen
@@ -223,10 +223,10 @@ export default function Header() {
     return (
         <header
             className={cn(
-                "flex w-[100dvw] lg:w-full flex-col lg:flex-row z-40",
-                "sticky top-0",
-                "bg-background",
-                "py-4 px-2",
+                "flex w-full",
+                "sticky top-0 z-40",
+                "bg-background/95 backdrop-blur-sm",
+                "py-3 px-4 sm:px-6 lg:px-8",
                 "items-center justify-between",
             )}
         >

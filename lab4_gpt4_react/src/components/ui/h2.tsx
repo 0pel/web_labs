@@ -9,7 +9,9 @@ export default function H2({
     return (
         <h2
             className={cn(
-                "text-[34px] text-transparent bg-clip-text bg-gradient-to-r from-[#AE67FA] to-[#F49867]",
+                "text-2xl sm:text-3xl lg:text-4xl",
+                "text-transparent bg-clip-text bg-gradient-to-r from-[#AE67FA] to-[#F49867]",
+                "leading-tight",
                 className,
             )}
             {...props}

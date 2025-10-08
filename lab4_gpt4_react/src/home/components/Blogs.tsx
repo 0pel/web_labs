@@ -19,22 +19,35 @@ function Blog({ blog }: Readonly<BlogProps>) {
 
     return (
         <div className={cn("flex flex-col")}>
-            <img src={image.src} alt={image.alt} />
+            <img
+                src={image.src}
+                alt={image.alt}
+                className="w-full h-auto object-cover"
+            />
             <div
                 className={cn(
                     "bg-[#042C54] flex flex-col flex-1 items-start gap-2",
-                    isMain ? "pt-8 pb-4 px-6" : "px-6 py-4",
+                    "p-4 sm:p-6 min-h-45",
+                    isMain ? "lg:pt-8 lg:pb-4 lg:px-6" : "lg:px-6 lg:py-4",
                 )}
             >
                 <P className={cn("text-xs")}>
                     {date.toLocaleDateString(undefined, timeFormatOptions)}
                 </P>
-                <H3 className={isMain ? "text-2xl lg:max-w-2/3" : "text-lg"}>
+                <H3
+                    className={cn(
+                        isMain
+                            ? "text-lg sm:text-xl lg:text-2xl lg:max-w-2/3"
+                            : "text-base sm:text-lg",
+                    )}
+                >
                     {title}
                 </H3>
                 <Button
                     asChild
-                    className={cn("text-white px-0 mt-auto")}
+                    className={cn(
+                        "text-white px-0 mt-auto text-sm sm:text-base",
+                    )}
                     variant="link"
                     size="sm"
                 >
@@ -52,9 +65,14 @@ type ContentProps = {
 
 function Content({ mainBlog, blogs }: Readonly<ContentProps>) {
     return (
-        <div className={cn("flex flex-row gap-12")}>
+        <div className={cn("flex flex-col lg:flex-row gap-6 lg:gap-12")}>
             <Blog blog={mainBlog} />
-            <div className={cn("grid grid-cols-2 gap-12")}>
+            <div
+                className={cn(
+                    "grid grid-cols-1 sm:grid-cols-2",
+                    "gap-6 sm:gap-8 lg:gap-12",
+                )}
+            >
                 {blogs.map((blog) => (
                     <Blog blog={blog} key={blog.id} />
                 ))}
@@ -66,8 +84,10 @@ function Content({ mainBlog, blogs }: Readonly<ContentProps>) {
 export default function Blogs() {
     const { title, mainBlog, blogs } = blogsData
     return (
-        <section className={cn("space-y-10")}>
-            <H1 className={cn("lg:max-w-2/3")}>{title}</H1>
+        <section className={cn("space-y-8 lg:space-y-10 px-4 sm:px-6 lg:px-8")}>
+            <H1 className={cn("text-3xl sm:text-4xl lg:text-5xl lg:max-w-2/3")}>
+                {title}
+            </H1>
             <Content mainBlog={mainBlog} blogs={blogs} />
         </section>
     )

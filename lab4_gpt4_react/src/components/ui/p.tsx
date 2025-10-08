@@ -4,7 +4,12 @@ import { cn } from "@/lib/utils.ts"
 export default function P({ className, ...props }: React.ComponentProps<"p">) {
     return (
         <p
-            className={cn("text-[#81afdd] whitespace-pre-wrap", className)}
+            className={cn(
+                "text-sm sm:text-base lg:text-lg",
+                "text-[#81afdd] whitespace-pre-wrap",
+                "leading-relaxed",
+                className,
+            )}
             {...props}
         />
     )

@@ -88,17 +88,34 @@ export default function Hero() {
     const { header, description, illustration, heroButtons } = heroData
 
     return (
-        <section className={cn("flex flex-col lg:flex-row")}>
+        <section
+            className={cn(
+                "flex flex-col lg:flex-row",
+                "items-center lg:items-start",
+                "gap-8 lg:gap-12",
+                "px-4 sm:px-6 lg:px-8 py-8 lg:py-12",
+            )}
+        >
             <div
                 className={cn(
-                    "flex flex-col text-center lg:text-left items-center lg:w-7/10 lg:items-stretch gap-8",
+                    "flex flex-col",
+                    "text-center lg:text-left",
+                    "items-center lg:items-start",
+                    "lg:flex-1 gap-6 lg:gap-8",
                 )}
             >
                 <Header header={header} />
                 <Description description={description} />
-                <Buttons buttons={heroButtons} />
+                <div className={cn("w-full max-w-md lg:max-w-none")}>
+                    <Buttons buttons={heroButtons} />
+                </div>
             </div>
-            <div className={cn("flex justify-center")}>
+            <div
+                className={cn(
+                    "flex justify-center lg:flex-1",
+                    "w-full lg:w-auto",
+                )}
+            >
                 <Illustration illustration={illustration} />
             </div>
         </section>

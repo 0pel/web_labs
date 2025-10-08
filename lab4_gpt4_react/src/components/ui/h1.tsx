@@ -9,8 +9,10 @@ export default function H1({
     return (
         <h1
             className={cn(
-                "font-manrope-bold text-[62px]",
+                "font-manrope-bold",
+                "text-4xl sm:text-5xl lg:text-6xl xl:text-[62px]",
                 "text-transparent bg-clip-text bg-gradient-to-r from-[#AE67FA] to-[#F49867]",
+                "leading-tight",
                 className,
             )}
             {...props}

@@ -9,7 +9,9 @@ export default function H3({
     return (
         <h3
             className={cn(
-                "text-lg text-foreground font-manrope-bold",
+                "text-base sm:text-lg lg:text-xl",
+                "text-foreground font-manrope-bold",
+                "leading-relaxed",
                 className,
             )}
             {...props}

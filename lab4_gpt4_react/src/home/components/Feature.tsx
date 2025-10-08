@@ -46,11 +46,19 @@ function Content({ data }: Readonly<ContentProps>) {
 export default function Feature() {
     const { image } = featureData
     return (
-        <section className={cn("flex flex-row gap-8 px-10")}>
+        <section
+            className={cn(
+                "flex flex-col lg:flex-row gap-6 lg:gap-8",
+                "px-4 sm:px-6 lg:px-10 py-8 lg:py-12",
+            )}
+        >
             <img
                 src={image.src}
                 alt={image.alt}
-                className={"max-w-1/2 h-auto"}
+                className={cn(
+                    "w-full lg:max-w-1/2 h-auto",
+                    "object-cover rounded-lg",
+                )}
             />
             <Content data={featureData} />
         </section>
