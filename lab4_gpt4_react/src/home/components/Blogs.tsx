@@ -11,7 +11,7 @@ type BlogProps = {
 
 function Blog({ blog }: Readonly<BlogProps>) {
     const { image, date, title, link, isMain } = blog
-    const dateOptions: Intl.DateTimeFormatOptions = {
+    const timeFormatOptions: Intl.DateTimeFormatOptions = {
         year: "numeric",
         month: "short",
         day: "numeric",
@@ -27,7 +27,7 @@ function Blog({ blog }: Readonly<BlogProps>) {
                 )}
             >
                 <P className={cn("text-xs")}>
-                    {date.toLocaleDateString(undefined, dateOptions)}
+                    {date.toLocaleDateString(undefined, timeFormatOptions)}
                 </P>
                 <H3 className={isMain ? "text-2xl lg:max-w-2/3" : "text-lg"}>
                     {title}
